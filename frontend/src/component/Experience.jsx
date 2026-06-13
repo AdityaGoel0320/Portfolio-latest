@@ -2,7 +2,7 @@ import React from "react";
 
 import "./experience.css";
 
-import { experiences } from "./experienceData";
+import { experiences } from "./experienceData.js";
 
 const Experience = () => {
   return (

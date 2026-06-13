@@ -1,5 +1,5 @@
 import React from "react";
-import { skills } from "./skillsData";
+import { skills } from "./skillsData.js";
 
 import "./skills.css";
 
