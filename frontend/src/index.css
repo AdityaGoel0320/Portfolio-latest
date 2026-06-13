@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@import "@fontsource/bungee";
+
+
+
+body {
+  background-color: #FAFAF7;
+}
+
+.myName {
+  font-family: "Bungee", sans-serif;
+}
+
+.animate-fadeTop {
+  animation: fadeTop 1s ease forwards;
+}
+
+.animate-fadeBottom {
+  animation: fadeBottom 1s ease forwards;
+}
+
+@keyframes fadeTop {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeBottom {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

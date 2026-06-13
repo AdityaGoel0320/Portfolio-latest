@@ -1,0 +1,371 @@
+.experienceSection {
+
+  min-height: 100vh;
+
+  background: #fafafa;
+
+  padding: 100px 8%;
+
+  position: relative;
+
+  overflow: hidden;
+
+}
+
+
+/* background text */
+
+.bgExperience {
+
+  position: absolute;
+
+  top: 50px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-size: clamp(7rem,15vw,16rem);
+
+  font-weight: 900;
+
+  color: rgba(0,0,0,.03);
+
+  user-select:none;
+
+}
+
+
+/* Heading */
+
+.experienceIntro {
+
+  text-align:center;
+
+  color:#666;
+
+  animation:fadeTop 1s ease forwards;
+
+}
+
+.experienceTitle {
+
+  text-align:center;
+
+  font-size:clamp(4rem,10vw,8rem);
+
+  font-family:"Bungee",sans-serif;
+
+  color:#111;
+
+  animation:fadeScale 1s ease forwards;
+
+}
+
+
+/* Timeline */
+
+.timeline {
+
+  position:relative;
+
+  margin-top:100px;
+
+}
+
+.timeline::before {
+
+  content:"";
+
+  position:absolute;
+
+  left:50%;
+
+  top:0;
+
+  width:4px;
+
+  height:100%;
+
+  transform:translateX(-50%);
+
+  background:#111;
+
+  box-shadow:
+
+  0 0 30px rgba(0,0,0,.15);
+
+}
+
+
+/* Item */
+
+.timelineItem {
+
+  width:50%;
+
+  position:relative;
+
+  margin-bottom:70px;
+
+}
+
+
+.left {
+
+  left:0;
+
+  padding-right:50px;
+
+  animation:fadeLeft 1s ease forwards;
+
+}
+
+.right {
+
+  left:50%;
+
+  padding-left:50px;
+
+  animation:fadeRight 1s ease forwards;
+
+}
+
+
+/* Dot */
+
+.timelineDot {
+
+  position:absolute;
+
+  top:30px;
+
+  width:22px;
+
+  height:22px;
+
+  border-radius:50%;
+
+  background:#111;
+
+  box-shadow:
+
+  0 0 30px rgba(0,0,0,.2);
+
+}
+
+.left .timelineDot{
+
+  right:-12px;
+
+}
+
+.right .timelineDot{
+
+  left:-10px;
+
+}
+
+
+/* Card */
+
+.experienceCard {
+
+  background:white;
+
+  border:1px solid rgba(0,0,0,.08);
+
+  border-radius:30px;
+
+  padding:35px;
+
+  transition:.4s;
+
+}
+
+.experienceCard:hover {
+
+  transform:
+
+  translateY(-10px)
+
+  scale(1.02);
+
+  box-shadow:
+
+  0 20px 70px
+
+  rgba(0,0,0,.08);
+
+}
+
+.experienceCard h2 {
+
+  font-size:2rem;
+
+  color:#111;
+
+}
+
+.experienceCard h3 {
+
+  color:#444;
+
+  margin-top:10px;
+
+}
+
+.duration {
+
+  margin-top:15px;
+
+  color:#666;
+
+}
+
+.certificate {
+
+  display:inline-block;
+
+  margin-top:20px;
+
+  color:#111;
+
+  font-weight:700;
+
+}
+
+.description {
+
+  margin-top:25px;
+
+  line-height:1.8;
+
+  color:#555;
+
+}
+
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.timeline::before{
+
+left:20px;
+
+}
+
+.timelineItem{
+
+width:100%;
+
+left:0;
+
+padding-left:60px;
+
+padding-right:0;
+
+}
+
+.right{
+
+left:0;
+
+}
+
+.left .timelineDot,
+
+.right .timelineDot{
+
+left:10px;
+
+}
+
+}
+
+
+/* Animations */
+
+@keyframes fadeLeft{
+
+from{
+
+opacity:0;
+
+transform:translateX(-100px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+
+@keyframes fadeRight{
+
+from{
+
+opacity:0;
+
+transform:translateX(100px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+
+@keyframes fadeTop{
+
+from{
+
+opacity:0;
+
+transform:translateY(-50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+@keyframes fadeScale{
+
+from{
+
+opacity:0;
+
+transform:scale(.8);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}

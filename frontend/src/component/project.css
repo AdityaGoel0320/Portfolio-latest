@@ -1,0 +1,248 @@
+.projectTitle {
+
+  font-size: 5rem;
+
+  font-family: "Bungee", sans-serif;
+
+  text-align: center;
+
+  animation: fadeTop 1s ease forwards;
+}
+
+.filterContainer {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 1rem;
+
+  flex-wrap: wrap;
+
+  margin: 3rem 0;
+}
+
+.filterBtn {
+
+  padding: .7rem 1.5rem;
+
+  border-radius: 999px;
+
+  border: 1px solid #ddd;
+
+  background: white;
+
+  cursor: pointer;
+
+  transition: .3s;
+}
+
+.filterBtn:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.1);
+}
+
+.activeFilter {
+
+  background: black;
+
+  color: white;
+}
+
+.projectGrid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit,minmax(350px,1fr));
+
+  gap: 2rem;
+}
+
+.projectCard {
+
+  background:
+    rgba(255,255,255,.65);
+
+  backdrop-filter: blur(12px);
+
+  border:
+
+    1px solid rgba(0,0,0,.08);
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  transition: .4s;
+
+  opacity: 0;
+
+  animation:
+
+    fadeBottom 1s ease forwards;
+}
+
+.projectCard:hover {
+
+  transform:
+
+    translateY(-10px);
+
+  box-shadow:
+
+    0 25px 60px
+
+    rgba(0,0,0,.12);
+}
+
+.imgWrapper {
+
+  overflow: hidden;
+
+  height: 250px;
+}
+
+.imgWrapper img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: .5s;
+}
+
+.projectCard:hover img {
+
+  transform: scale(1.08);
+}
+
+.cardContent {
+
+  padding: 1.5rem;
+}
+
+.cardContent h2 {
+
+  font-size: 2rem;
+
+  font-weight: 700;
+}
+
+.techContainer {
+
+  display: flex;
+
+  gap: .6rem;
+
+  flex-wrap: wrap;
+
+  margin: 1rem 0;
+}
+
+.techTag {
+
+  padding:
+
+    .4rem .8rem;
+
+  border-radius: 999px;
+
+  background:
+
+    rgba(0,0,0,.06);
+
+  font-size: .85rem;
+}
+
+.btns {
+
+  display: flex;
+
+  gap: 1rem;
+
+  margin-top: 1.5rem;
+}
+
+.btns a {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: .5rem;
+
+  padding:
+
+    .8rem 1.3rem;
+
+  border-radius: 999px;
+
+  background: black;
+
+  color: white;
+
+  text-decoration: none;
+
+  transition: .3s;
+}
+
+.btns a:hover {
+
+  transform:
+
+    translateY(-3px);
+
+  box-shadow:
+
+    0 10px 25px
+
+    rgba(0,0,0,.2);
+}
+
+/* Same animation as hero */
+
+@keyframes fadeTop {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(-40px);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+@keyframes fadeBottom {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(40px);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}

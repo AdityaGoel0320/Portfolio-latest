@@ -1,0 +1,290 @@
+.aboutSection {
+
+  min-height: 100vh;
+
+  padding: 100px 8%;
+
+  background: #fafafa;
+
+  position: relative;
+
+  overflow: hidden;
+
+}
+
+
+/* Huge Background Text */
+
+.bgText {
+
+  position: absolute;
+
+  top: 80px;
+
+  right: -50px;
+
+  font-size: clamp(8rem, 18vw, 18rem);
+
+  font-weight: 900;
+
+  color: rgba(0,0,0,0.03);
+
+  user-select: none;
+
+  opacity: 0;
+
+}
+
+.showBgText {
+
+  animation: fadeScale 1.5s ease forwards;
+
+}
+
+
+/* Initial State */
+
+.aboutIntro,
+.aboutTitle,
+.aboutPara,
+.educationHeading,
+.educationCard {
+
+  opacity: 0;
+
+}
+
+
+/* Animation Classes */
+
+.showTop {
+
+  animation: fadeTop 1s ease forwards;
+
+}
+
+.showBottom {
+
+  animation: fadeBottom 1s ease forwards;
+
+}
+
+.showScale {
+
+  animation: fadeScale 1s ease forwards;
+
+}
+
+.showCard {
+
+  animation: cardPop 0.8s ease forwards;
+
+}
+
+
+/* Delays */
+
+.delay1 {
+
+  animation-delay: 0.2s;
+
+}
+
+.delay2 {
+
+  animation-delay: 0.5s;
+
+}
+
+.delay3 {
+
+  animation-delay: 0.8s;
+
+}
+
+
+/* Text */
+
+.aboutIntro {
+
+  font-size: 1.5rem;
+
+  color: #666;
+
+}
+
+.aboutTitle {
+
+  font-size: clamp(4rem, 10vw, 8rem);
+
+  font-family: "Bungee", sans-serif;
+
+  color: #111;
+
+}
+
+.aboutContent {
+
+  max-width: 900px;
+
+  margin-top: 40px;
+
+}
+
+.aboutPara {
+
+  font-size: 1.3rem;
+
+  line-height: 2;
+
+  color: #444;
+
+  margin-bottom: 30px;
+
+}
+
+.aboutPara span {
+
+  font-weight: 700;
+
+  color: #111;
+
+}
+
+
+/* Education */
+
+.educationSection {
+
+  margin-top: 100px;
+
+}
+
+.educationHeading {
+
+  font-size: 3rem;
+
+  font-weight: 800;
+
+  margin-bottom: 40px;
+
+}
+
+.educationGrid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+
+  gap: 30px;
+
+}
+
+.educationCard {
+
+  background: rgba(255,255,255,0.7);
+
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(0,0,0,0.08);
+
+  border-radius: 24px;
+
+  padding: 30px;
+
+  transition: .3s;
+
+}
+
+.educationCard:hover {
+
+  transform: translateY(-10px);
+
+  box-shadow:
+
+  0 20px 50px rgba(0,0,0,.08);
+
+}
+
+
+/* Animations */
+
+@keyframes fadeTop {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(-50px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+@keyframes fadeBottom {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(50px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+  }
+
+}
+
+@keyframes fadeScale {
+
+  from {
+
+    opacity: 0;
+
+    transform: scale(.8);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+  }
+
+}
+
+@keyframes cardPop {
+
+  from {
+
+    opacity: 0;
+
+    transform: translateY(50px) scale(.9);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform: translateY(0) scale(1);
+
+  }
+
+}
