@@ -2,8 +2,12 @@
 
 @import "@fontsource/bungee";
 
-* {
-  cursor: none;
+*,
+*::before,
+*::after {
+
+  cursor: none !important;
+
 }
 
 ::-webkit-scrollbar {

@@ -1,144 +1,53 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+
 import "./cursor.css";
 
 const CustomCursor = () => {
-  const ringRef = useRef(null);
+
   const dotRef = useRef(null);
 
-  const mouse = useRef({
-    x: 0,
-    y: 0,
-  });
-
-  const pos = useRef({
-    x: 0,
-    y: 0,
-  });
-
-  const [hover, setHover] = useState(false);
-
-  const [clicked, setClicked] = useState(false);
-
-  const [scrolling, setScrolling] =
+  const [pointer, setPointer] =
     useState(false);
 
   const [ripples, setRipples] =
     useState([]);
 
-  useEffect(() => {
 
-    const moveCursor = (e) => {
-
-      mouse.current = {
-
-        x: e.clientX,
-
-        y: e.clientY,
-      };
-
-      if (dotRef.current) {
-
-        dotRef.current.style.left =
-          `${e.clientX}px`;
-
-        dotRef.current.style.top =
-          `${e.clientY}px`;
-
-      }
-
-     const iconTarget = e.target.closest(
-  ".sidebarIcon,.socialIcon"
-);
-
-if (iconTarget) {
-
-  setHover(false);
-
-  ringRef.current.classList.add(
-    "hideRing"
-  );
-
-} else {
-
-  ringRef.current.classList.remove(
-    "hideRing"
-  );
-
-  const target = e.target.closest(
-    "button,a,.projectCard"
-  );
-
-  setHover(!!target);
-
-}
-
-    };
-
-    window.addEventListener(
-      "mousemove",
-      moveCursor
-    );
-
-    return () => {
-
-      window.removeEventListener(
-        "mousemove",
-        moveCursor
-      );
-
-    };
-
-  }, []);
 
   useEffect(() => {
 
-    const animate = () => {
+    const move = (e) => {
 
-      pos.current.x +=
+      dotRef.current.style.left =
+        `${e.clientX}px`;
 
-        (mouse.current.x -
-          pos.current.x)
+      dotRef.current.style.top =
+        `${e.clientY}px`;
 
-        * 0.12;
 
-      pos.current.y +=
 
-        (mouse.current.y -
-          pos.current.y)
+      const clickable =
+        e.target.closest(
+          `
+          a,
+          button,
+          .sidebarIcon,
+          .socialIcon,
+          .projectCard
+          `
+        );
 
-        * 0.12;
-
-      if (ringRef.current) {
-
-        ringRef.current.style.left =
-          `${pos.current.x}px`;
-
-        ringRef.current.style.top =
-          `${pos.current.y}px`;
-
-      }
-
-      requestAnimationFrame(
-        animate
-      );
+      setPointer(!!clickable);
 
     };
 
-    animate();
 
-  }, []);
 
-  useEffect(() => {
-
-    const handleClick = (e) => {
-
-      setClicked(true);
-
-      setTimeout(() => {
-
-        setClicked(false);
-
-      }, 400);
+    const click = (e) => {
 
       const id = Date.now();
 
@@ -158,69 +67,57 @@ if (iconTarget) {
 
       ]);
 
+
+
       setTimeout(() => {
 
         setRipples((prev) =>
 
           prev.filter(
-            (r) => r.id !== id
+
+            (r) =>
+
+              r.id !== id
+
           )
 
         );
 
-      }, 700);
+      }, 800);
 
     };
+
+
+
+    window.addEventListener(
+      "mousemove",
+      move
+    );
 
     window.addEventListener(
       "click",
-      handleClick
+      click
     );
 
+
+
     return () => {
+
+      window.removeEventListener(
+        "mousemove",
+        move
+      );
 
       window.removeEventListener(
         "click",
-        handleClick
+        click
       );
 
     };
 
   }, []);
 
-  useEffect(() => {
 
-    let timer;
-
-    const handleScroll = () => {
-
-      setScrolling(true);
-
-      clearTimeout(timer);
-
-      timer = setTimeout(() => {
-
-        setScrolling(false);
-
-      }, 200);
-
-    };
-
-    window.addEventListener(
-      "scroll",
-      handleScroll
-    );
-
-    return () => {
-
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
-
-    };
-
-  }, []);
 
   return (
 
@@ -228,45 +125,19 @@ if (iconTarget) {
 
       <div
 
-        ref={ringRef}
-
-        className={`
-        cursorRing
-
-        ${hover ? "hover" : ""}
-
-        ${clicked ? "click" : ""}
-
-      ${
-        scrolling
-
-          ? "scrolling"
-
-          : ""
-
-      }
-
-      `}
-      />
-
-      <div
-
         ref={dotRef}
 
         className={`
-        cursorDot
 
-      ${
-        scrolling
+          cursorDot
 
-          ? "scrollDot"
+          ${pointer ? "pointer" : ""}
 
-          : ""
+        `}
 
-      }
-
-      `}
       />
+
+
 
       {
 
@@ -295,6 +166,7 @@ if (iconTarget) {
     </>
 
   );
+
 };
 
 export default CustomCursor;
