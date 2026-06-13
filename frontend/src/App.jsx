@@ -7,7 +7,7 @@ import Skills from "./component/Skills";
 import Project from "./component/Project";
 import ContactMe from "./component/ContactMe";
 
-import "./app.css";
+import "./App.css";
 import CustomCursor from "./component/CustomCursor";
 
 const App = () => {
