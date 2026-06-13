@@ -1,0 +1,302 @@
+* {
+
+  cursor: none;
+}
+
+
+/* Outer Ring */
+
+.cursorRing {
+
+  position: fixed;
+
+  left: 0;
+
+  top: 0;
+
+  width: 45px;
+
+  height: 45px;
+
+  border-radius: 50%;
+
+  border:
+
+    1.5px solid
+
+    rgba(0,0,0,.8);
+
+  background:
+
+    rgba(255,255,255,.25);
+
+  backdrop-filter:
+
+    blur(12px);
+
+  pointer-events: none;
+
+  z-index: 9999;
+
+  transform:
+
+    translate(-50%,-50%);
+
+  transition:
+
+    width .3s ease,
+
+    height .3s ease,
+
+    background .3s ease,
+
+    box-shadow .3s ease;
+
+  box-shadow:
+
+    0 0 25px
+
+    rgba(0,0,0,.08),
+
+    inset
+
+    0 0 15px
+
+    rgba(255,255,255,.8);
+
+}
+
+
+/* Inner Dot */
+
+.cursorDot {
+
+  position: fixed;
+
+  left: 0;
+
+  top: 0;
+
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: black;
+
+  pointer-events: none;
+
+  z-index: 10000;
+
+  transform:
+
+    translate(-50%,-50%);
+
+}
+
+
+/* Hover */
+
+.cursorRing.hover {
+
+  width: 20px;
+
+  height: 20px;
+
+  background:
+
+    rgba(255,255,255,.55);
+
+  box-shadow:
+
+    0 0 60px
+
+    rgba(0,0,0,.12),
+
+    0 0 120px
+
+    rgba(255,255,255,.8);
+
+}
+
+
+/* Click */
+
+.cursorRing.click {
+
+  animation:
+
+    clickPulse
+
+    .45s ease;
+}
+
+
+@keyframes clickPulse {
+
+  0% {
+
+    transform:
+
+      translate(-50%,-50%)
+
+      scale(1);
+
+  }
+
+  30% {
+
+    transform:
+
+      translate(-50%,-50%)
+
+      scale(.8);
+
+  }
+
+  70% {
+
+    transform:
+
+      translate(-50%,-50%)
+
+      scale(1.25);
+
+  }
+
+  100% {
+
+    transform:
+
+      translate(-50%,-50%)
+
+      scale(1);
+
+  }
+
+}
+
+
+/* Ripple */
+
+.cursorRipple {
+
+  position: fixed;
+
+  width: 20px;
+
+  height: 20px;
+
+  border-radius: 50%;
+
+  border:
+
+    2px solid
+
+    rgba(0,0,0,.25);
+
+  pointer-events: none;
+
+  transform:
+
+    translate(-50%,-50%);
+
+  animation:
+
+    ripple
+
+    .7s ease forwards;
+
+  z-index: 9998;
+}
+
+
+@keyframes ripple {
+
+  from {
+
+    opacity: 1;
+
+    transform:
+
+      translate(-50%,-50%)
+
+      scale(1);
+
+  }
+
+  to {
+
+    opacity: 0;
+
+    transform:
+
+      translate(-50%,-50%)
+
+      scale(5);
+
+  }
+
+}
+
+
+/* Scroll animation */
+
+.scrollDot {
+
+  animation:
+
+    scrollBall
+
+    .5s infinite
+
+    ease-in-out;
+}
+
+
+@keyframes scrollBall {
+
+  0% {
+
+    transform:
+
+      translate(-50%,-50%)
+
+      translateY(-8px);
+
+  }
+
+  50% {
+
+    transform:
+
+      translate(-50%,-50%)
+
+      translateY(8px);
+
+  }
+
+  100% {
+
+    transform:
+
+      translate(-50%,-50%)
+
+      translateY(-8px);
+
+  }
+
+}
+
+.hideRing {
+
+  opacity: 0;
+
+  transform:
+
+    translate(-50%,-50%)
+
+    scale(.5);
+
+}

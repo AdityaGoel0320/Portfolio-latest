@@ -8,12 +8,14 @@ import Project from "./component/Project";
 import ContactMe from "./component/ContactMe";
 
 import "./app.css";
+import CustomCursor from "./component/CustomCursor";
 
 const App = () => {
   return (
     <div className="appContainer">
 
       {/* Hero Section */}
+       <CustomCursor />
 
       <FrontPage />
 
@@ -23,7 +25,7 @@ const App = () => {
 
         {/* Sidebar */}
 
-        <aside className="sidebar">
+        <aside className="w-42 sidebar">
 
           <div className="avatar">
 
