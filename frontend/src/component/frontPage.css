@@ -1,72 +1,88 @@
 /* Intro */
 
-
-
 .intro {
-
   font-size: 2rem;
+  color: #374151;
 
   opacity: 0;
-
   animation: fadeTop 1s ease forwards;
 }
 
 
 /* Name */
 
+.name {
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-family: "Bungee";
+
+  color: #111827;
+  -webkit-text-stroke: 4px #ffffff;
+
+  text-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.08),
+    0 8px 25px rgba(0, 0, 0, 0.12),
+    0 0 40px rgba(255, 255, 255, 0.9);
+
+  opacity: 0;
+  animation: fadeBottom 1s ease forwards;
+  animation-delay: 0.4s;
+
+  user-select: none;
+}
+
 
 /* Subtitle */
 
 .subtitle {
-
   font-size: 1.3rem;
-
   letter-spacing: 3px;
-
-  color: #666;
+  color: #6b7280;
 
   opacity: 0;
-
   animation: fadeBottom 1s ease forwards;
-
-  animation-delay: 1.2s;
+  animation-delay: 0.8s;
 }
 
 
 /* Scroll Circle */
 
 .scrollCircle {
-
   width: 60px;
-
   height: 60px;
 
   border-radius: 999px;
 
-  border: 1px solid rgba(0,0,0,0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
-  background: rgba(255,255,255,0.5);
-
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   font-size: 1.5rem;
+  color: #111827;
 
   box-shadow:
-    0 0 20px rgba(0,0,0,0.08),
-    0 0 50px rgba(255,255,255,0.8);
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    0 0 30px rgba(255, 255, 255, 0.9);
+
+  transition: all 0.3s ease;
+}
+
+.scrollCircle:hover {
+  transform: translateY(-5px) scale(1.08);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.12),
+    0 0 40px rgba(255, 255, 255, 1);
 }
 
 
-/* Arrow Fade Animation */
+/* Arrow Container */
 
 .fadeArrow {
-
   animation: fadeInOut 2s infinite ease-in-out;
 }
 
@@ -74,92 +90,42 @@
 /* Animations */
 
 @keyframes fadeTop {
-
   from {
-
     opacity: 0;
-
     transform: translateY(-40px);
-
   }
 
   to {
-
     opacity: 1;
-
     transform: translateY(0);
-
   }
-
 }
-
 
 @keyframes fadeBottom {
-
   from {
-
     opacity: 0;
-
     transform: translateY(40px);
-
   }
 
   to {
-
     opacity: 1;
-
     transform: translateY(0);
-
   }
-
 }
-
-
-@keyframes fadeScale {
-
-  from {
-
-    opacity: 0;
-
-    transform: scale(0.8);
-
-  }
-
-  to {
-
-    opacity: 1;
-
-    transform: scale(1);
-
-  }
-
-}
-
 
 @keyframes fadeInOut {
-
   0% {
-
-    opacity: 0.3;
-
+    opacity: 0.5;
     transform: translateY(0);
-
   }
 
   50% {
-
     opacity: 1;
-
     transform: translateY(10px);
-
   }
 
   100% {
-
-    opacity: 0.3;
-
+    opacity: 0.5;
     transform: translateY(0);
-
   }
-
 }

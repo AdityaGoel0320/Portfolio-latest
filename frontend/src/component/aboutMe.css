@@ -12,11 +12,12 @@
 }
 
 
-.myName {
+.heading {
+  border: 2px solid red;
   position: relative;
 
-  font-size: clamp(4rem, 12vw, 10rem);
-  font-family: "Bungee", sans-serif;
+  font-size: 12rem;
+  font-family: "Bungee";
 
   color: #111827;
 
@@ -27,7 +28,7 @@
   text-shadow:
     0 0 10px rgba(255,255,255,0.9),
     0 0 25px rgba(255,255,255,0.8),
-    0 0 50px rgba(255,255,255,0.65),;
+    0 0 50px rgba(255,255,255,0.65);
 
   /* filter: drop-shadow(0 0 12px rgba(255,255,255,0.7)); */
 

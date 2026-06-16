@@ -23,7 +23,7 @@ const FrontPage = () => {
       </span>
 
       {/* Name */}
-      <h1 className="myName">
+      <h1 className="name">
         Aditya Goel
       </h1>
 
