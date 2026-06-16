@@ -1,5 +1,7 @@
 /* Intro */
 
+
+
 .intro {
 
   font-size: 2rem;
@@ -11,19 +13,6 @@
 
 
 /* Name */
-
-.myName {
-
-  font-size: clamp(4rem, 12vw, 10rem);
-
-  font-family: "Bungee", sans-serif;
-
-  opacity: 0;
-
-  animation: fadeScale 1s ease forwards;
-
-  animation-delay: 0.5s;
-}
 
 
 /* Subtitle */

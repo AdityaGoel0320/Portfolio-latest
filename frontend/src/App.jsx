@@ -12,104 +12,121 @@ import CustomCursor from "./component/CustomCursor";
 
 const App = () => {
   return (
-    <div className="appContainer">
+    <>
+      <div className="appContainer">
 
-      {/* Hero Section */}
-       <CustomCursor />
+        {/* Animated Background */}
 
-      <FrontPage />
+        <div className="background">
+          <div className="blob blob1"></div>
+          <div className="blob blob2"></div>
+          <div className="blob blob3"></div>
 
-      {/* Main Content */}
+          <div className="gridBg"></div>
 
-      <section className="mainSection">
-
-        {/* Sidebar */}
-
-        <aside className="w-42 sidebar">
-
-          <div className="avatar">
-
-            AG
-
+          <div className="particles">
+            {[...Array(25)].map((_, i) => (
+              <span key={i}></span>
+            ))}
           </div>
+        </div>
 
-          <div className="socials">
+        {/* Hero Section */}
 
-            <a href="#">
-              LinkedIn
-            </a>
+        <CustomCursor />
 
-            <a href="#">
-              Github
-            </a>
+        <FrontPage />
 
-            <a href="#">
-              LeetCode
-            </a>
+        {/* Main Content */}
 
-            <a href="#">
-              Resume
-            </a>
+        <section className="mainSection">
 
-          </div>
+          {/* Sidebar */}
 
-        </aside>
+          <aside className="w-42 pl-12 sidebar">
 
-        {/* Content */}
+            <div className="avatar">
+              AG
+            </div>
 
-        <main className="content">
+            <div className="socials">
 
-          <div className="sectionFade">
-            <AboutMe />
-          </div>
+              <a href="#">
+                LinkedIn
+              </a>
 
-          <div className="sectionFade delay1">
-            <Skills />
-          </div>
+              <a href="#">
+                Github
+              </a>
 
-          <div className="sectionFade delay2">
-            <Experience />
-          </div>
+              <a href="#">
+                LeetCode
+              </a>
 
-          <div className="sectionFade delay3">
-            <Project />
-          </div>
+              <a href="#">
+                Resume
+              </a>
 
-          <div className="sectionFade delay4">
-            <ContactMe />
-          </div>
+            </div>
 
-        </main>
+          </aside>
 
-      </section>
+          {/* Content */}
 
-      {/* Mobile Bottom Navbar */}
+          <main className="content">
 
-      <nav className="bottomNavbar">
+            <div className="sectionFade">
+              <AboutMe />
+            </div>
 
-        <a href="#about">
-          About
-        </a>
+            <div className="sectionFade delay1">
+              <Skills />
+            </div>
 
-        <a href="#skills">
-          Skills
-        </a>
+            <div className="sectionFade delay2">
+              <Experience />
+            </div>
 
-        <a href="#experience">
-          Experience
-        </a>
+            <div className="sectionFade delay3">
+              <Project />
+            </div>
 
-        <a href="#projects">
-          Projects
-        </a>
+            <div className="sectionFade delay4">
+              <ContactMe />
+            </div>
 
-        <a href="#contact">
-          Contact
-        </a>
+          </main>
 
-      </nav>
+        </section>
 
-    </div>
+        {/* Mobile Navbar */}
+
+        <nav className="bottomNavbar">
+
+          <a href="#about">
+            About
+          </a>
+
+          <a href="#skills">
+            Skills
+          </a>
+
+          <a href="#experience">
+            Experience
+          </a>
+
+          <a href="#projects">
+            Projects
+          </a>
+
+          <a href="#contact">
+            Contact
+          </a>
+
+        </nav>
+
+      </div>
+    </>
   );
 };
 

@@ -10,11 +10,7 @@ const Experience = () => {
       id="experience"
       className="experienceSection"
     >
-      <div className="bgExperience">
 
-        EXPERIENCE
-
-      </div>
 
       <p className="experienceIntro">
 
@@ -22,7 +18,7 @@ const Experience = () => {
 
       </p>
 
-      <h1 className="experienceTitle">
+      <h1 className="myName experienceTitle">
 
         EXPERIENCE
 

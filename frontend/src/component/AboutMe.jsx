@@ -36,15 +36,11 @@ const AboutMe = () => {
         ADITYA
       </div>
 
-      {/* Intro */}
-
-      <p className={`aboutIntro ${show ? "showTop" : ""}`}>
-        Get to know me
-      </p>
+     
 
       {/* Heading */}
 
-      <h1 className={`aboutTitle ${show ? "showScale" : ""}`}>
+      <h1 className={`myName aboutTitle ${show ? "showScale" : ""}`}>
         ABOUT ME
       </h1>
 
@@ -73,10 +69,9 @@ const AboutMe = () => {
       </div>
 
       {/* Education */}
-
       <div className="educationSection">
 
-        <h2 className={`educationHeading ${show ? "showTop" : ""}`}>
+        <h2 className={`smallHeading educationHeading ${show ? "showTop" : ""}`}>
           EDUCATION
         </h2>
 

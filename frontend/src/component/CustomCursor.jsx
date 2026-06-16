@@ -10,9 +10,6 @@ const CustomCursor = () => {
 
   const dotRef = useRef(null);
 
-  const [pointer, setPointer] =
-    useState(false);
-
   const [ripples, setRipples] =
     useState([]);
 
@@ -22,26 +19,18 @@ const CustomCursor = () => {
 
     const move = (e) => {
 
-      dotRef.current.style.left =
-        `${e.clientX}px`;
+      const el = dotRef.current;
+      if (!el) return;
 
-      dotRef.current.style.top =
-        `${e.clientY}px`;
-
-
+      el.style.transform =
+        `translate(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%))`;
 
       const clickable =
         e.target.closest(
-          `
-          a,
-          button,
-          .sidebarIcon,
-          .socialIcon,
-          .projectCard
-          `
+          "a, button, .sidebarIcon, .socialIcon, .projectCard"
         );
 
-      setPointer(!!clickable);
+      el.classList.toggle("pointer", !!clickable);
 
     };
 
@@ -127,13 +116,7 @@ const CustomCursor = () => {
 
         ref={dotRef}
 
-        className={`
-
-          cursorDot
-
-          ${pointer ? "pointer" : ""}
-
-        `}
+        className="cursorDot"
 
       />
 
