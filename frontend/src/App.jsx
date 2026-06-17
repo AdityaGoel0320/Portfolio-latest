@@ -12,43 +12,24 @@ import "./App.css";
 const App = () => {
   return (
     <>
-    <div className="waves">
-  <svg className="wave wave1" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <path d="M0,160 C120,100 240,220 360,160 C480,100 600,220 720,160 C840,100 960,220 1080,160 C1200,100 1320,220 1440,160 V0 H0 Z"/>
-  </svg>
+      <div className="waves">
+        <svg className="wave wave1" viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path d="M0,160 C120,100 240,220 360,160 C480,100 600,220 720,160 C840,100 960,220 1080,160 C1200,100 1320,220 1440,160 V0 H0 Z" />
+        </svg>
 
-  <svg className="wave wave2" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <path d="M0,180 C100,120 220,240 340,180 C460,120 580,240 700,180 C820,120 940,240 1060,180 C1180,120 1300,240 1440,180 V0 H0 Z"/>
-  </svg>
+        <svg className="wave wave2" viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path d="M0,180 C100,120 220,240 340,180 C460,120 580,240 700,180 C820,120 940,240 1060,180 C1180,120 1300,240 1440,180 V0 H0 Z" />
+        </svg>
 
-  <svg className="wave wave3" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <path d="M0,140 C150,60 300,220 450,140 C600,60 750,220 900,140 C1050,60 1200,220 1350,140 C1400,120 1440,140 1440,140 V0 H0 Z"/>
-  </svg>
+        <svg className="wave wave3" viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path d="M0,140 C150,60 300,220 450,140 C600,60 750,220 900,140 C1050,60 1200,220 1350,140 C1400,120 1440,140 1440,140 V0 H0 Z" />
+        </svg>
 
-  <svg className="wave wave4" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <path d="M0,200 C120,140 240,260 360,200 C480,140 600,260 720,200 C840,140 960,260 1080,200 C1200,140 1320,260 1440,200 V0 H0 Z"/>
-  </svg>
-</div>
+        <svg className="wave wave4" viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path d="M0,200 C120,140 240,260 360,200 C480,140 600,260 720,200 C840,140 960,260 1080,200 C1200,140 1320,260 1440,200 V0 H0 Z" />
+        </svg>
+      </div>
       <div className="appContainer">
-
-        {/* Animated Background */}
-{/* 
-        <div className="background">
-          <div className="blob blob1"></div>
-          <div className="blob blob2"></div>
-          <div className="blob blob3"></div>
-
-          <div className="gridBg"></div>
-
-          <div className="particles">
-            {[...Array(25)].map((_, i) => (
-              <span key={i}></span>
-            ))}
-          </div>
-        </div> */}
-
-        {/* Hero Section */}
-
         <FrontPage />
 
         {/* Main Content */}

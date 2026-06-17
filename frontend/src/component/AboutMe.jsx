@@ -40,7 +40,7 @@ const AboutMe = () => {
 
       {/* Heading */}
 
-      <h1 className={`heading aboutTitle ${show ? "showScale" : ""}`}>
+      <h1 className={`heading  ${show ? "showScale" : ""}`}>
         ABOUT ME
       </h1>
 
